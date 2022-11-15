@@ -1,12 +1,15 @@
 const express = require('express');
 const dotenv = require('dotenv').config()
+const port = process.env.PORT || 3000
+const app = express()
 
-const app = express();
+app.get('/', (req, res) => {
+    res.send("<h1> Hello </h1>");
+})
 
-app.listen(3000, ()=>console.log("Server started"))
+app.listen(port, ()=>{
+    console.log("Server started")
+});
 
 console.log("hello world");
 
-app.get('/', function (req, res){
-    res.render('index', {});
-});
