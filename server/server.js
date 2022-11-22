@@ -15,6 +15,9 @@ app.get('/', (req, res) => {
 })
 
 app.use('/user', require('./routes/userRoute')) //allows the specific route to be used under the /user tag
+app.use('/authentication', require('./routes/authenticationRoute')) 
+
+
 
 app.listen(port, ()=>{
     console.log("Server started")
