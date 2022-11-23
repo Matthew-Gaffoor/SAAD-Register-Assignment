@@ -1,22 +1,33 @@
 const mongoose = require('mongoose')
-    
+
 const schema = mongoose.schema
 
 const registrationSchema = new mongoose.Schema({
-    registration_name: {
-        type: String,
-        required: true, //means name is required
-        trim: true //trims off the spaces left in a string if any
+    moduleId: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Module',
+        required: true
     },
-    user: {
-        type: String
+    courseId: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Course',
+        required: true
     },
-    lecturer: {
-        type: String
+    studentId: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Student',
+        required: true
+    },
+    groupId: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Group',
+        required: true
     },
     date: {
-        type: Date
-   } 
+        type: Date,
+        required: true, //means name is required
+        default: false
+    },
+    present: {
+        type: Boolean,
+        required: true
+    }
 }, {timestamps: true})
 
 const Registration = mongoose.model('Registration' , registrationSchema)

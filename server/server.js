@@ -16,6 +16,12 @@ app.get('/', (req, res) => {
 
 app.use('/user', require('./routes/userRoute')) //allows the specific route to be used under the /user tag
 app.use('/authentication', require('./routes/authenticationRoute')) 
+app.use('/student', require('./routes/studentRoute')) 
+app.use('/lecturer', require('./routes/lecturerRoute')) 
+app.use('/group', require('./routes/groupRoute')) 
+app.use('/course', require('./routes/courseRoute')) 
+app.use('/module', require('./routes/moduleRoute')) 
+app.use('/registration', require('./routes/registrationRoute')) 
 
 
 

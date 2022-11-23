@@ -8,7 +8,7 @@ const listAuthentications = (req, res)=>{
 
 const findAuthentication = (req, res)=>{
     authenticationModel.findById(req.params.id)
-        .then(user => res.json(user))
+        .then(authentication => res.json(authentication))
         .catch(err => res.status(400).json('Error: ' + err));
 }
 
@@ -25,14 +25,14 @@ const updateAuthentication = (req, res)=>{
             authentication.password = req.body.password;
 
             authentication.save()
-                .then(() => res.json('user updated.'))
+                .then(() => res.json('authentication updated.'))
                 .catch(err => res.status(400).json('Error: ' + err));
         })
 
         .catch(err => res.status(400).json('Error: ' + err));
 }
 
-const addAuthentication = (req, res)=>{
+const addAuthentication = async (req, res)=>{
 
     const username = req.body.username;
     const password = req.body.password;
@@ -41,11 +41,14 @@ const addAuthentication = (req, res)=>{
         username,
         password
     })
+    try{
+        await newAuthentication.save()
+        res.json({name:"added a new authentication"})
 
-    newAuthentication.save()
-        
-    res.json({name:"added a new authentication"})
-    
+    }catch(e){
+        res.json("please change your username and password")
+    }
+            
 }
 
 

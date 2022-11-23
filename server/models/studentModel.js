@@ -4,7 +4,12 @@ const schema = mongoose.schema
 
 const studentSchema = new mongoose.Schema({
     authenticationId: {
-        type: mongoose.Schema.Types.ObjectId, ref: 'Authentication'
+        type: mongoose.Schema.Types.ObjectId, ref: 'Authentication',
+        required: true
+    },
+    groupId: {
+        type: mongoose.Schema.Types.ObjectId, ref: 'Group',
+        required: true
     },
     name: {
         type: String,
