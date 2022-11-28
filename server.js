@@ -5,14 +5,11 @@ const app = express()
 
 const AuthRoute = require('./routes/auth')
 
-app.get('/', (req, res) => {
-    res.send("<h1> Hello </h1>");
-})
+app.get('*', function(req, res) {
+    res.sendFile(__dirname + '/reactapp/public/index.html');
+});
 
 app.listen(port, ()=>{
     console.log("Server started")
 });
-
-app.use('/api', AuthRoute)
-console.log("hello world");
 
