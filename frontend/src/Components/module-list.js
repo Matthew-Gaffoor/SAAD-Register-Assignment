@@ -3,7 +3,7 @@ import React from "react";
 function ViewModuleList() {
     return (
         <div class="App">
-            Hello World
+            Hello Wordld
         </div>
     );
 }

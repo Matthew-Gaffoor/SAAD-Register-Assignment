@@ -3,7 +3,6 @@ const dotenv = require('dotenv').config()
 const port = process.env.PORT || 5000
 const connDB = require('./database')
 const app = express()
-const AuthRoute = require('./routes/auth')
 
 connDB()
 
