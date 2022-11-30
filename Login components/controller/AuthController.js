@@ -40,8 +40,9 @@ const login = (req, res, next) => {
                     })
                 }
                 if(result){
-                    let token = jwt.sign({name: user.name}, 'Hashed', {expiresIn: '9h'})
-                    res.json({
+                    let token = jwt.sign({name: user.name}, 'Hashed3.1423', {expiresIn: '5h'})
+                    let refreshtoken = jwt.sign({name: user.name}, 'token31.14', {expiresIn: '24h'})
+                    res.status(200).json({
                         message: 'Login Successful',
                         token
                     })
@@ -60,7 +61,25 @@ const login = (req, res, next) => {
 
     User.find
 }
-
+const RefreshToken = (req,res,next) => {
+    const RefreshToken = req.body.RefreshToken
+    jwt.verify(RefreshToken, 'refreshsecrettoken', function(err,decode){
+        if(err) {
+            res.status(400).json({
+                err
+            })
+        }
+        else {
+            let token = jwt.sign({name: decode.name},'token31.14', {expiresIn: '1h'})
+            let RefreshToken = req.body.RefreshToken
+            res.status(200).json({
+                message: "token refreshed",
+                token,
+                RefreshToken
+            })
+        }
+    })
+}
 module.exports = {
-    register
+    register, login, RefreshToken
 }
