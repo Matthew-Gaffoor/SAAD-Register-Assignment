@@ -9,6 +9,9 @@ import ViewStudentList1 from "./components/student-list1";
 import ViewStudentList2 from "./components/student-list2";
 import ViewStudentList3 from "./components/student-list3";
 import RemoveStudent from "./components/student-remove";
+import ViewLoginPage from "./components/login-page";
+import StudentHome from "./components/student-home";
+import StudentViewModuleList from "./components/student-module-list";
 
 
 function App() {
@@ -24,6 +27,10 @@ function App() {
     <Route path="/student-list2" element={<ViewStudentList2 />} />
     <Route path="/student-list3" element={<ViewStudentList3 />} />
     <Route path="/student-remove" element={<RemoveStudent />} />
+    <Route path="/login-page" element={<ViewLoginPage />} />
+
+    <Route path="/student-home" element={<StudentHome />} />
+    <Route path="/student-module-list" element={<StudentViewModuleList />} />
   </Routes>
 </Router>
 </div>
