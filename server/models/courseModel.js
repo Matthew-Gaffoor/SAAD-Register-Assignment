@@ -15,4 +15,11 @@ courseSchema.plugin(uniqueValidator);
 
 const Course = mongoose.model('Course' , courseSchema)
 
+const course1 = new Course({ name: 'Software Architecture and Design'})
+
+course1.save(function (err, courses) {
+    if (err) return console.error(err);
+    console.log(courses.name + " saved to Courses collection.");
+  });
+
 module.exports = Course

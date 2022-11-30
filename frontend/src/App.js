@@ -5,6 +5,10 @@ import Home from "./components/home";
 import ViewCourseList from "./components/course-list";
 import ViewModuleList from "./components/module-list";
 import ViewStudentList from "./components/student-list";
+import ViewStudentList1 from "./components/student-list1";
+import ViewStudentList2 from "./components/student-list2";
+import ViewStudentList3 from "./components/student-list3";
+import RemoveStudent from "./components/student-remove";
 
 
 function App() {
@@ -16,6 +20,10 @@ function App() {
     <Route path="/course-list" element={<ViewCourseList />} />
     <Route path="/module-list" element={<ViewModuleList />} />
     <Route path="/student-list" element={<ViewStudentList />} />
+    <Route path="/student-list1" element={<ViewStudentList1 />} />
+    <Route path="/student-list2" element={<ViewStudentList2 />} />
+    <Route path="/student-list3" element={<ViewStudentList3 />} />
+    <Route path="/student-remove" element={<RemoveStudent />} />
   </Routes>
 </Router>
 </div>
