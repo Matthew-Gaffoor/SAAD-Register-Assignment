@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
     const navigate = useNavigate();
+
     return (
         <div>
     
@@ -39,7 +40,7 @@ function Home() {
                 <h1 class="fw-light">Welcome (User)!</h1>
                 <p class="lead text-muted">From the homepage you are able to access the course, module and student list.</p>
                 <p>
-                  <a href="#" class="btn btn-primary my-2">Sign Out</a>
+                  <a href="#" class="btn btn-primary my-2" onClick={() => {navigate("/login-page")}}>Sign Out</a>
                 </p>
               </div>
             </div>

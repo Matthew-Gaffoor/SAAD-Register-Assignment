@@ -5,9 +5,9 @@
 //    const [password, setPassword] = useState('');
 //    const [name,setName] = useState('')
 //    
- //   const handleSubmit = (e) => {
- //       e.preventDefault();
- //       console.log(email);
+//    const handleSubmit = (e) => {
+//        e.preventDefault();
+//        console.log(email);
 //
 //    }
 //
@@ -37,6 +37,6 @@
 //            <button>Login</button>
 //        </form>
 //        <button onClick={() => props.onFormSwitch('login')}>have an account? Login</button>
-//        </>
+//        </div>
 //    )
 // }

@@ -12,6 +12,13 @@ import RemoveStudent from "./components/student-remove";
 import ViewLoginPage from "./components/login-page";
 import StudentHome from "./components/student-home";
 import StudentViewModuleList from "./components/student-module-list";
+import Register from "./components/register";
+import RequireAuth from "./components/RequireAuth";
+import Unauthorized from "./components/unauthorized";
+
+const ROLES = {
+  'User': 2001
+}
 
 
 function App() {
@@ -28,9 +35,13 @@ function App() {
     <Route path="/student-list3" element={<ViewStudentList3 />} />
     <Route path="/student-remove" element={<RemoveStudent />} />
     <Route path="/login-page" element={<ViewLoginPage />} />
-
+    <Route path="/register" element={<Register />} />
     <Route path="/student-home" element={<StudentHome />} />
     <Route path="/student-module-list" element={<StudentViewModuleList />} />
+    <Route element={<RequireAuth allowedRoles={[ROLES.User]} />}>
+      <Route path="/" element={<Home />} />
+    </Route>
+    <Route path="/unauthorized" element={<Unauthorized />} />
   </Routes>
 </Router>
 </div>

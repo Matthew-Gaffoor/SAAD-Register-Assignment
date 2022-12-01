@@ -39,7 +39,7 @@ function StudentHome() {
                 <h1 class="fw-light">Welcome (User)!</h1>
                 <p class="lead text-muted">From the homepage you are able to access your modules</p>
                 <p>
-                  <a href="#" class="btn btn-primary my-2">Sign Out</a>
+                  <a href="#" class="btn btn-primary my-2" onClick={() => {navigate("/login-page")}}>Sign Out</a>
                 </p>
               </div>
             </div>
